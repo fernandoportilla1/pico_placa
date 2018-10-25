@@ -4,8 +4,12 @@
 # Install Dependencies 
     pip install -r requirements.txt
     
-# Create Migrations Empty
+# Migrations
     python manage.py migrate
+
+# Styles And Js
+    cd static/
+    npm install
 
 # Audit Test
     coverage run --source='.' manage.py test apps.pico_placa

@@ -6,33 +6,27 @@
     <meta charset="UTF-8">
 
     <link rel="stylesheet" type="text/css" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}">
     {% block extrastatic %}
     {% endblock %}
-
-    <style>
-        .active {
-            background-color: #666;
-            color: white;
-        }
-    </style>
     <title>{% block title %}Document {% endblock %}</title>
 </head>
 
-<body>
-{% block header %}
-{% include "base/header.html" %}
-{% endblock %}
-
-<div class="container">
-    {% block content %}
-    <h4> Bloque de contenido </h4>
+<body class="bg-light">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    {% block header %}
+    {% include "base/header.html" %}
     {% endblock %}
+
+    <main role="main" class="container">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    {% block footer %}
+    {% include "base/footer.html" %}
+    {% endblock%}
 </div>
-
-{% block footer %}
-{% include "base/footer.html" %}
-{% endblock%}
-
 <script src="{% static 'node_modules/jquery/dist/jquery.slim.min.js' %}"></script>
 <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.min.js' %}"></script>
 {% block extrajs %}

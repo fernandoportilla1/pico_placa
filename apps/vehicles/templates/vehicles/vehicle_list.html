@@ -1,32 +1,45 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-<table class="table table-bordered">
-    <thead>
-    <tr>
-        <td>No.</td>
-        <td>License Plate Number</td>
-        <td>Date</td>
-        <td>Time</td>
-        <td>Pico And Placa</td>
-    </tr>
 
-    </thead>
-    <tbody>
-    {% if vehicle_list %}
-    {% for vehicle in vehicle_list %}
-    <tr>
-        <td>{{ vehicle.id }}</td>
-        <td>{{ vehicle.license_plate_number }}</td>
-        <td>{{ vehicle.current_date }}</td>
-        <td>{{ vehicle.current_time }}</td>
-        <td>{{ vehicle.can_drive }}</td>
-    </tr>
-    {% endfor %}
+<div class="col-sm-12">
+    <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-blue rounded shadow-sm">
+        <div class="lh-100">
+            <h6 class="mb-0 text-white lh-100">Vehicles</h6>
+        </div>
+    </div>
 
-    {% else %}
-    <h1> Registered Vehicles </h1>
-    {% endif %}
-    </tbody>
-</table>
+    <div class="my-3 p-3 bg-white rounded shadow-sm">
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                <tr class="text-center">
+                    <td>No.</td>
+                    <td>License Plate Number</td>
+                    <td>Date</td>
+                    <td>Time</td>
+                    <td>Pico Y Placa</td>
+                </tr>
+                </thead>
+                <tbody>
+                {% if vehicle_list %}
+                {% for vehicle in vehicle_list %}
+                <tr>
+                    <td>{{ vehicle.id }}</td>
+                    <td>{{ vehicle.license_plate_number }}</td>
+                    <td>{{ vehicle.current_date }}</td>
+                    <td>{{ vehicle.current_time }}</td>
+                    <td>{{ vehicle.can_drive }}</td>
+                </tr>
+                {% endfor %}
+
+                {% else %}
+                <h1> Registered Vehicles </h1>
+                {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

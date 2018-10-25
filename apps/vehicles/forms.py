@@ -21,10 +21,9 @@ class VehicleForm(forms.ModelForm):
         self.helper = FormHelper()
         self.helper.form_id = 'vehicle-form'
         self.helper.form_class = 'form'
-        self.helper.label_class = 'col-lg-3'
+        self.helper.label_class = 'col-lg-6'
         self.helper.field_class = 'col-lg-9'
         self.helper.form_method = 'post'
-        self.helper.form_action = ''
 
         self.helper.layout = Layout('license_plate_number', 'current_date', 'current_time')
 

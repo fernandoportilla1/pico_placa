@@ -9,8 +9,18 @@ from apps.vehicles.models import Vehicle
 class VehicleListView(ListView):
     model = Vehicle
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['active_list'] = 'active'
+        return context
+
 
 class VehicleCreateView(CreateView):
     model = Vehicle
     form_class = VehicleForm
     success_url = reverse_lazy('vehicle-list-view')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['active_create'] = 'active'
+        return context
