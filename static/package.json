@@ -1,0 +1,11 @@
+{
+  "name": "static",
+  "version": "1.0.0",
+  "description": "Frontend",
+  "author": "Fernando Portilla",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "jquery": "^3.3.1"
+  }
+}

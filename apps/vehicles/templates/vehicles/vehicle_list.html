@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <td>No.</td>
+        <td>License Plate Number</td>
+        <td>Date</td>
+        <td>Time</td>
+        <td>Pico And Placa</td>
+    </tr>
+
+    </thead>
+    <tbody>
+    {% if vehicle_list %}
+    {% for vehicle in vehicle_list %}
+    <tr>
+        <td>{{ vehicle.id }}</td>
+        <td>{{ vehicle.license_plate_number }}</td>
+        <td>{{ vehicle.current_date }}</td>
+        <td>{{ vehicle.current_time }}</td>
+        <td>{{ vehicle.can_drive }}</td>
+    </tr>
+    {% endfor %}
+
+    {% else %}
+    <h1> Registered Vehicles </h1>
+    {% endif %}
+    </tbody>
+</table>
+{% endblock %}
