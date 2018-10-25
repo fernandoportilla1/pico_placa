@@ -12,7 +12,7 @@
     npm install
 
 # Audit Test
-    coverage run --source='.' manage.py test apps.pico_placa
+    coverage run --source='.' manage.py test apps.vehicles
     coverage report
 
 
